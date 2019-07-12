@@ -19,11 +19,13 @@ package com.google.codelabs.dataflow.utils;
 import com.google.api.services.bigquery.model.TableRow;
 import org.apache.beam.sdk.coders.AvroCoder;
 import org.apache.beam.sdk.coders.DefaultCoder;
+
+import java.io.Serializable;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 
 @DefaultCoder(AvroCoder.class)
-public class RidePoint {
+public class RidePoint implements Serializable {
   public RidePoint() {}
 
   public RidePoint(String key) {
